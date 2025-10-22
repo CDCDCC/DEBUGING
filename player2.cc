@@ -5,9 +5,9 @@
 #include <numeric> // IWYU pragma: keep
 #include <cstring> // IWYU pragma: keep
 using namespace std;
-
+//:A
 //When you complete a stage, set the next stage's 'false' to be 'true'
-#define STAGE6  false
+#define STAGE6  true
 #define STAGE7  false
 #define STAGE8  false
 #define STAGE9  false
