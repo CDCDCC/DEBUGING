@@ -7,7 +7,7 @@
 using namespace std;
 
 //When you complete a stage, set the next stage's 'false' to be 'true'
-#define STAGE1 false
+#define STAGE1 true
 #define STAGE2 false
 #define STAGE3 false
 #define STAGE4 false
