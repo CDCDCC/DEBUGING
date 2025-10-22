@@ -34,7 +34,7 @@ enum RETVAL { NOT_IMPLEMENTED = -100, BAD_INPUT = -200};
 int function6() {
 	int seed = read("Input Random Seed:\n");
 	srand(seed);
-	int base-chance = read("Input Base Chance:\n");
+	int base_chance = read("Input Base Chance:\n");
 	int increase_chance = read("Input Chance Goes Up Per Miss:\n");
 	if (base_chance < 1 and base_chance > 100 and increase_chance < 1 and increase_chance > 100) return BAD_INPUT;
 	int pulls = 0;
@@ -43,7 +43,7 @@ int function6() {
 		int roll = rand() % 100;
 		//cerr << roll << " vs " << chance << endl;
 		if (roll < chance) return pulls;
-		chance += -increase_chance; //We failed, so increase our odds next time
+		chance += increase_chance; //We failed, so increase our odds next time
 		pulls++; 
 	}
 	return 0;
@@ -183,7 +183,7 @@ int function9() {
 
 int function10() {
 	vector<string> emoji = {"6️⃣7️⃣","⛵","🏴‍☠️","🦜","⚔️","🪢","🪙","🦪","⚫","🎩","🎤","🎶","😺"};
-	const char *alpha = “ABCDEFGHIJKLMNOPQRSTUVWXYZ”; //C Style String
+	const char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //C Style String
 	const char *consonants = "BCDFGHJKLMNPQRSTVWXYZ";
 	const char *vowels = "AEIOU";
 	int seed = read("Please enter a random seed:\n");
