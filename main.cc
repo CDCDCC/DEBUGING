@@ -3,13 +3,14 @@
 #include <vector> // IWYU pragma: keep
 #include <algorithm> // IWYU pragma: keep
 #include <numeric> // IWYU pragma: keep
+//#include <string> ||||||||| for getline()
 //#include "player2.cc" //Your partner will work in this file
 using namespace std;
 
 //When you complete a stage, set the next stage's 'false' to be 'true'
 #define STAGE1 true
 #define STAGE2 true
-#define STAGE3 false
+#define STAGE3 true
 #define STAGE4 false
 #define STAGE5 false
 
@@ -79,14 +80,14 @@ int function3() {
 	cout << "Stevie Nicks was the lead singer for Fleetwood Mac and also had a solo career.\n";
 	cout << "Please enter the name of a song and we will return 1 if it is one of her songs, 0 otherwise.\n";
 	string song;
-	cin >> song;
+	song = readline();
+	//getline(cin, song);
+	//cout << "This is my song: " << song << endl;
 	if (song == "The Chain") {
 		return 1;
 	} else if (song == "Edge of Seventeen") {
 		return 1;
-	} else 
-		return 0;
-	 else if (song == "Stop Draggin' My Heart Around") { // This entire code is not an original code you have modified a little bit. make sure to check.
+	} else if (song == "Stop Draggin' My Heart Around") {
 		return 1;
 	} else if (song == "Stand Back") {
 		return 1;
@@ -94,11 +95,11 @@ int function3() {
 		return 1;
 	} else if (song == "Go Your Own Way") {
 		return 1;
-	}
-		
-	 return 0;
+	} else
+		return 0;
 
-}
+	return 0;
+} //Honestly don't know what it is
 #else
 int function3() {
 	return NOT_IMPLEMENTED;
