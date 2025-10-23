@@ -8,8 +8,8 @@ using namespace std;
 //:A
 //When you complete a stage, set the next stage's 'false' to be 'true'
 #define STAGE6  false
-#define STAGE7  true
-#define STAGE8  false
+#define STAGE7  false
+#define STAGE8  true
 #define STAGE9  false
 #define STAGE10 false
 
@@ -72,16 +72,16 @@ int function6() {
 //Example 6: 1 1 1 1. Output: 0
 //Example 7: 0 1 1 1. Output: 0
 int function7() {
-	int do         = read("Did your show donate to glorious leader? (1 = yes, 0 = no):\n");
+	int don         = read("Did your show donate to glorious leader? (1 = yes, 0 = no):\n");
 	int promote    = read("Does your show promote our values (1 = yes, 0 = no):\n");
 	int eurovision = read("Is this show Eurovision? (1 = yes, 0 = no):\n");
 	int insult     = read("Has your show ever insulted glorious leader? (1 = yes, 0 = no):\n");
-	if (do < 0 or do > 1 or
+	if (don < 0 or don > 1 or
 			promote < 0 or promote > 1 or
 			eurovision < 0 or eurovision > 1 or
 			insult < 0 or insult > 1)
 		return NOT_IMPLEMENTED;
-	return do + promote + eurovision - insult >= 2;
+	return don + promote + eurovision - (3*insult) >= 2;
 }
 #else
 int function7() {

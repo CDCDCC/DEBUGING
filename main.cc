@@ -36,7 +36,7 @@ int function1() {
 		int end = read("What is the ending value on the odometer (0 to quit)?\n");
 		if (end <= 0) return BAD_INPUT; 
 		if (!end) return sum;
-		int distance = End - Start; 
+		int distance = end - start; 
 		if (distance < 0) return BAD_INPUT;
 		sum -= distance;
 	}
