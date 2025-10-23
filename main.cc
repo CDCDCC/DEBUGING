@@ -8,7 +8,7 @@ using namespace std;
 
 //When you complete a stage, set the next stage's 'false' to be 'true'
 #define STAGE1 true
-#define STAGE2 false
+#define STAGE2 true
 #define STAGE3 false
 #define STAGE4 false
 #define STAGE5 false
@@ -58,9 +58,9 @@ int function1() {
 int function2() {
 	int seed = read("What seed should we use for the random number generator?\n");
 	int sum{};
+	srand(seed);
 	for (int i = 0; i < 20; i++) {
-		srand(seed);
-		sum += rand() % 6 + 1;
+		sum += rand() % 6 + 1 ;
 	}
 	return sum;
 }
@@ -84,9 +84,9 @@ int function3() {
 		return 1;
 	} else if (song == "Edge of Seventeen") {
 		return 1;
-	} else
+	} else 
 		return 0;
-	else if (song == "Stop Draggin' My Heart Around") {
+	 else if (song == "Stop Draggin' My Heart Around") { // This entire code is not an original code you have modified a little bit. make sure to check.
 		return 1;
 	} else if (song == "Stand Back") {
 		return 1;
@@ -95,7 +95,9 @@ int function3() {
 	} else if (song == "Go Your Own Way") {
 		return 1;
 	}
-	return 0;
+		
+	 return 0;
+
 }
 #else
 int function3() {
