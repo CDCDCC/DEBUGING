@@ -31,14 +31,14 @@ int function1() {
 	int sum = 0;
 	while (true) {
 		int start = read("What is the starting value on the odometer (0 to quit)?\n");
-		if (start <= 0) return BAD_INPUT;
+		if (start < 0) return BAD_INPUT;
 		if (!start) return sum;
 		int end = read("What is the ending value on the odometer (0 to quit)?\n");
-		if (end <= 0) return BAD_INPUT;
+		if (end < 0) return BAD_INPUT;
 		if (!end) return sum;
 		int distance = end - start;
 		if (distance < 0) return BAD_INPUT;
-		sum -= distance;
+		sum += distance;
 	}
 	return sum;
 }
