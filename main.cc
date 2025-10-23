@@ -11,7 +11,7 @@ using namespace std;
 #define STAGE1 true
 #define STAGE2 true
 #define STAGE3 true
-#define STAGE4 false
+#define STAGE4 true
 #define STAGE5 false
 
 //If your stage isn't implemented, it should return NOT_IMPLEMENTED
@@ -81,8 +81,6 @@ int function3() {
 	cout << "Please enter the name of a song and we will return 1 if it is one of her songs, 0 otherwise.\n";
 	string song;
 	song = readline();
-	//getline(cin, song);
-	//cout << "This is my song: " << song << endl;
 	if (song == "The Chain") {
 		return 1;
 	} else if (song == "Edge of Seventeen") {
@@ -99,7 +97,7 @@ int function3() {
 		return 0;
 
 	return 0;
-} //Honestly don't know what it is
+}
 #else
 int function3() {
 	return NOT_IMPLEMENTED;
@@ -125,7 +123,7 @@ int function4() {
 	string str = readline("Enter the string for a game, such as: FFTTETCFS:\n");
 	int score{};
 	if (str.size() == 0) return score;
-	char last_char = "F";
+	char last_char = 'F';
 	for (const char &c : str) {
 		switch (c) {
 		case FIELD_GOAL:
@@ -135,15 +133,16 @@ int function4() {
 			score += TOUCHDOWN_POINTS;
 			break;
 		case EXTRA_POINT:
-			if (last_char == TOUCHDOWN) return BAD_INPUT;
+			if (last_char != TOUCHDOWN) return BAD_INPUT;
 			score += EXTRA_POINT_POINT;
 			break;
 		case CONVERSION:
-			if (last_char == TOUCHDOWN) return BAD_INPUT;
+			if (last_char != TOUCHDOWN) return BAD_INPUT;
 			score += CONVERSION_POINTS;
 			break;
 		case SAFETY:
 			score += SAFETY_POINTS;
+			break;
 		default:
 			return BAD_INPUT;
 		}
