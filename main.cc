@@ -4,7 +4,7 @@
 #include <algorithm> // IWYU pragma: keep
 #include <numeric> // IWYU pragma: keep
 //#include <string> ||||||||| for getline()
-//#include "player2.cc" //Your partner will work in this file
+#include "player2.cc" //Your partner will work in this file
 using namespace std;
 
 //When you complete a stage, set the next stage's 'false' to be 'true'
@@ -245,11 +245,11 @@ int main() {
 	else if (choice == 3)  retval = function3();
 	else if (choice == 4)  retval = function4();
 	else if (choice == 5)  retval = function5();
-	/*else if (choice == 6)  retval = function6();
+	else if (choice == 6)  retval = function6();
 	else if (choice == 7)  retval = function7();
 	else if (choice == 8)  retval = function8();
 	else if (choice == 9)  retval = function9();
-	else if (choice == 10) retval = function10();*/
+	else if (choice == 10) retval = function10();
 	else retval = BAD_INPUT;
 	if (retval == BAD_INPUT) cout << "BAD INPUT!\n";
 	else if (retval == NOT_IMPLEMENTED) cout << "NOT IMPLEMENTED!\n";
