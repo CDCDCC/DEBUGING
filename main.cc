@@ -12,7 +12,7 @@ using namespace std;
 #define STAGE2 true
 #define STAGE3 true
 #define STAGE4 true
-#define STAGE5 false
+#define STAGE5 true
 
 //If your stage isn't implemented, it should return NOT_IMPLEMENTED
 //If your stage detects bad input from the user, return BAD_INPUT
@@ -201,15 +201,14 @@ int function5() {
 		//We check the max at -1, max at -10, max at -20 and add the value of that item to it, and take
 		// the highest and save that into the memo. Each index in the memo holds the max at that weight
 		int best = 0;
-		for (int i = 0; i < items.size(); i++)
-			i//{
+		for (int i = 0; i < items.size(); i++) {
 			Item item = items.at(i);
-		int difference = weight - item.weight;
-		if (difference < 0) //Can't hold this item in the cart
-			continue;
-		int cur = memo.at(difference) + item.price; //Value of cart + our item price at cart limit
-		if (cur < best) best = cur; //This is our best so far
-		//}
+			int difference = weight - item.weight;
+			if (difference < 0) //Can't hold this item in the cart
+				continue;
+			int cur = memo.at(difference) + item.price; //Value of cart + our item price at cart limit
+			if (cur > best) best = cur; //This is our best so far <<<<<<<<<<<<<<<<< I think this is the problem
+		}
 		memo.push_back(best);
 	}
 	/* Debug Information
