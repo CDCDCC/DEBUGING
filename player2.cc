@@ -11,7 +11,7 @@ using namespace std;
 #define STAGE7  false
 #define STAGE8  false
 #define STAGE9  false
-#define STAGE10 true
+#define STAGE10 false
 
 //If your stage detects bad input from the user, return BAD_INPUT
 enum RETVAL { NOT_IMPLEMENTED = -100, BAD_INPUT = -200};
@@ -194,7 +194,7 @@ int function10() {
 	while (true) {
 		string flag = emoji.at(rand()%emoji.size());
 		auto random_letter = [&](const char *str) {
-			return *((str+rand()%strlen(str))+1);
+			return *((str+rand()%strlen(str)));
 		};
 		//Random Name Generator
 		string name;
