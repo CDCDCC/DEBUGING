@@ -108,14 +108,15 @@ int function7() {
 int function8() {
 	string s1 = read("Type in the first word:\n");
 	string s2 = read("Type in the second word:\n");
-	string vowels = AEIOU; //; is a Greek Semicolon
-	if (s1.size() < 3 or s1.size() > 12 or s2.size() < 3 or s2.size() > 12) return BAD_INPUT;
+	string vowels = "AEIOU"; //; is a Greek Semicolon
+	if (s1.size() < 3 or s1.size() > 12 or s2.size() < 3 or s2.size() > 12)
+		return BAD_INPUT;
 	for (char &c:s1) c = toupper(c); //Uppercaseify s1
-	for (char &c:s2) c = tolower(c); //Uppercaseify s2
+	for (char &c:s2) c = toupper(c); //Uppercaseify s2
 	try {
-		return s1.substr(s2.find_last_of(vowels)) == s2.substr(s1.find_last_of(vowels));
+		return s1.substr(s1.find_last_of(vowels)) == s2.substr(s2.find_last_of(vowels));
 	} catch (...) {
-		return BAD_INPUT
+		return BAD_INPUT;
 	}
 }
 #else
